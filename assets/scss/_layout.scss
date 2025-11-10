@@ -1,8 +1,7 @@
 .container {
     width: 100%;
-    max-width: $container-primary;
+    max-width: $container-width;
     margin: 0 auto;
-    padding-inline: $container-padding;
 }
 
 .wrapper {
@@ -27,7 +26,7 @@
 .section-title {
     font-family: $font-secondary;
     font-size: 4rem;
-    color: $color-primary;
+    color: $color-text;
     line-height: 1.2;
 
     @media (max-width: 768px) {

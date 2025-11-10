@@ -5,8 +5,8 @@
     gap: 0.8rem;
     width: fit-content;
     color: #0A0A0A;
-    background: $color-primary;
-    border: 1px solid $color-primary;
+    background: $color-text;
+    border: 1px solid $color-text;
     border-radius: 0.8rem;
     padding: 1.1rem 2.4rem;
     line-height: 1.5;
@@ -15,9 +15,9 @@
 }
 
 .button:hover {
-    color: $color-primary;
+    color: $color-text;
     background: #0A0A0A;
-    border: 1px solid $color-primary;
+    border: 1px solid $color-text;
 }
 
 /* ==== SWIPER NAVIGATION BUTTONS ==== */

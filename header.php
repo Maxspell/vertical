@@ -27,7 +27,7 @@
         <?php
         $general = get_field('general', 'options');
         $logo = $general['logo'] ?? [];
-        $button = $general['button'] ?? '';
+        $button = $general['button'] ?? [];
         ?>
 
         <header class="header">
@@ -54,12 +54,14 @@
                         ?>
                     </nav>
 
-                    <a href="<?php echo esc_url($button['url']); ?>" class="header__button button" target="_blank">
-                        <span><?php echo esc_html($button['title']); ?></span>
-                        <svg class="arrow-btn" aria-hidden="true">
-                            <use href="/wp-content/themes/vertical/assets/icons/icons.svg#arrow-btn"></use>
-                        </svg>
-                    </a>
+                    <?php if (!empty($button)) : ?>
+                        <a href="<?php echo esc_url($button['url']); ?>" class="header__button button" target="_blank">
+                            <span><?php echo esc_html($button['title']); ?></span>
+                            <svg class="arrow-btn" aria-hidden="true">
+                                <use href="/wp-content/themes/vertical/assets/icons/icons.svg#arrow-btn"></use>
+                            </svg>
+                        </a>
+                    <?php endif; ?>
 
                     <div class="burger-menu">
                         <span></span>

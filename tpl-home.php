@@ -9,14 +9,14 @@ get_header();
 
 <main class="main">
     <?php get_template_part('sections/home/hero'); ?>
-    <?php get_template_part('sections/home/benefits'); ?>
-    <?php get_template_part('sections/home/requirements'); ?>
-    <?php get_template_part('sections/common/reviews'); ?>
-    <?php get_template_part('sections/common/events'); ?>
-    <?php get_template_part('sections/home/upcoming-events'); ?>
-    <?php get_template_part('sections/home/owners'); ?>
-    <?php get_template_part('sections/common/partners'); ?>
-    <?php get_template_part('sections/common/philosophy'); ?>
+    <?php get_template_part('sections/home/features'); ?>
+    <?php get_template_part('sections/home/about'); ?>
+    <?php get_template_part('sections/home/team'); ?>
+    <?php get_template_part('sections/home/services'); ?>
+    <?php get_template_part('sections/home/gallery'); ?>
+    <?php get_template_part('sections/home/reviews'); ?>
+    <?php get_template_part('sections/common/contacts'); ?>
+    <?php get_template_part('sections/common/location'); ?>
 </main>
 
 <?php get_footer(); ?>

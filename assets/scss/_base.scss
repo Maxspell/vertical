@@ -12,8 +12,9 @@ body {
     font-weight: 400;
     font-size: $font-size-base;
     line-height: 1.5;
-    color: $color-primary;
-    background-color: $color-bg-primary;
+    color: $color-text;
+    background-color: $color-bg;
+    padding-inline: $site-padding;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
