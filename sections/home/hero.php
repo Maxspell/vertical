@@ -13,10 +13,11 @@ $image_2 = $hero_section['image_2'] ?? [];
 
 <section class="hero">
 
-    <div class="hero__inner">
+    <div class="hero__grid">
         <div class="hero__text">
             <?php echo $text; ?>
         </div>
+        <div class="hero__image"></div>
         <div class="hero__list">
             <ul>
                 <li></li>
@@ -25,6 +26,7 @@ $image_2 = $hero_section['image_2'] ?? [];
                 <li></li>
             </ul>
         </div>
+        <div class="hero__image"></div>
     </div>
 
 </section>
