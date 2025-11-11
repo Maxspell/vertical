@@ -1,0 +1,30 @@
+.page-hero {
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 1.5rem;
+    }
+
+    &__content {
+        color: $color-white;
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-family: $font-primary;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 2.4rem;
+        margin-bottom: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-family: $font-secondary;
+        font-size: 52rem;
+        font-weight: 700;
+    }
+}
