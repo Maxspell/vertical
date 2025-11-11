@@ -6,3 +6,13 @@ if (empty($about_section) || $about_section['disabled']) {
 }
 
 $text = $about_section['text'] ?? '';
+?>
+
+<section class="team">
+    <div class="containers">
+        <div class="team__columns">
+            <div class="team__column"></div>
+            <div class="team__column"></div>
+        </div>
+    </div>
+</section>
