@@ -5,64 +5,55 @@ if (empty($contacts_section) || $contacts_section['disabled']) {
     return;
 }
 
-$title = $contacts_section['title'] ?? '';
-$subtitle = $contacts_section['subtitle'] ?? '';
-$email = $contacts_section['email'] ?? '';
-$phone_list = $contacts_section['phone_list'] ?? '';
-$text = $contacts_section['text'] ?? '';
-$button = $contacts_section['button'] ?? '';
-$donate_title = $contacts_section['donate_title'] ?? '';
-$donate_subtitle = $contacts_section['donate_subtitle'] ?? '';
-$donate_button = $contacts_section['donate_button'] ?? '';
-$donate_card = $contacts_section['donate_card'] ?? '';
-$donate_text = $contacts_section['donate_text'] ?? '';
+$address = $contacts_section['address'] ?? '';
+$email = $contacts_section['email'] ?? [];
+$phone = $contacts_section['phone'] ?? [];
+$list = $contacts_section['list'] ?? [];
+$map = $contacts_section['map'] ?? '';
 ?>
 
-<section id="contacts" class="contacts section">
-    <div class="container container--primary">
-        <div class="contacts__inner">
-            <div class="contacts__content">
-                <h2 class="contacts__title section-title"><?php echo $title; ?></h2>
-                <div class="contacts__subtitle"><?php echo $subtitle; ?></div>
-                <div class="contacts__email">
-                    <a href="<?php echo $email['url']; ?>"><?php echo $email['title']; ?></a>
+<section class="contacts">
+    <div class="contacts__inner">
+        <div class="contacts__columns">
+            <div class="contacts__column contacts__column--left">
+                <div class="contacts__map"><?= $map; ?></div>
+                <div class="contacts__location">
+                    <address class="location">
+                        <?php if ($address) : ?>
+                            <div class="location__address">
+                                <div class="location__label">Адреса</div>
+                                <div class="location__title"><?= $address; ?></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($email) : ?>
+                            <div class="contacts__email">
+                                <div class="location__label">Email</div>
+                                <div class="location__title"><?= $email; ?></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($phone) : ?>
+                            <div class="contacts__phone">
+                                <div class="location__label">Телефон</div>
+                                <div class="location__title"><?= $phone; ?></div>
+                            </div>
+                        <?php endif; ?>
+                    </address>
                 </div>
-                <?php if ($phone_list) : ?>
-                    <ul class="contacts__phone-list">
-                        <?php foreach ($phone_list as $phone) : ?>
-                            <li class="contacts__phone-item">
-                                <a href="<?php echo $phone['item']['url']; ?>"><?php echo $phone['item']['title']; ?></a>
+            </div>
+            <div class="contacts__column contacts__column--right">
+                <?php if (!empty($list)) : ?>
+                    <ul class="contacts__list">
+                        <?php foreach ($list as $item) :
+                            $day = $item['day'] ?? '';
+                            $time = $item['time'] ?? '';
+                        ?>
+                            <li class="contacts__item">
+                                <span><?= $day; ?></span>
+                                <span><?= $time; ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
-                <div class="contacts__text">
-                    <?php echo $text; ?>
-                </div>
-                <a href="<?php echo esc_url($button['url']); ?>" class="contacts__button button button--secondary">
-                    <span><?php echo esc_html($button['title']); ?></span>
-                    <svg class="arrow-btn" aria-hidden="true">
-                        <use href="/wp-content/themes/vertical/assets/icons/icons.svg#arrow-btn"></use>
-                    </svg>
-                </a>
-            </div>
-            <div class="contacts__donate">
-                <div class="contacts__donate-title section-title"><?php echo $donate_title; ?></div>
-                <div class="contacts__donate-subtitle"><?php echo $donate_subtitle; ?></div>
-                <div class="contacts__donate-buttons">
-                    <a href="<?php echo esc_url($donate_button['url']); ?>" class="contacts__donate-button button">
-                        <span><?php echo esc_html($donate_button['title']); ?></span>
-                        <svg class="arrow-btn" aria-hidden="true">
-                            <use href="/wp-content/themes/vertical/assets/icons/icons.svg#arrow-btn"></use>
-                        </svg>
-                    </a>
-                    <div class="contacts__donate-card">
-                        <?php echo $donate_card; ?>
-                    </div>
-                </div>
-                <div class="contacts__donate-text">
-                    <?php echo $donate_text; ?>
-                </div>
             </div>
         </div>
     </div>
