@@ -10,7 +10,7 @@ $list = $features_section['list'] ?? [];
 
 <?php if (!empty($list)) : ?>
     <section class="features">
-        <div class="container">
+        <div class="container container--primary">
             <div class="features__list">
                 <?php foreach ($list as $item) :
                     $title = $item['title'] ?? '';

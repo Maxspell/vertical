@@ -5,36 +5,35 @@ if (empty($approach_section) || $approach_section['disabled']) {
     return;
 }
 
-$text = $about_section['text'] ?? '';
-$photo = $about_section['photo'] ?? [];
-$name = $about_section['name'] ?? '';
-$position = $about_section['position'] ?? '';
+$text = $approach_section['text'] ?? '';
+$photo = $approach_section['photo'] ?? [];
+$name = $approach_section['name'] ?? '';
+$position = $approach_section['position'] ?? '';
 ?>
 
-<section class="approach">
-    <div class="containers">
+<section class="approach section">
+    <div class="container">
         <div class="approach__columns">
             <div class="approach__column">
-                <div class="approach__content">
-                    <h2 class="approach__title">Командна робота – для Вашого результату:</h2>
-
-                    <p class="approach__text">У нашій клініці з пацієнтом працює одразу кілька фахівців...</p>
-
-                    <h3 class="approach__subtitle">Тепло, як у родині:</h3>
-
-                    <p class="approach__text">
-                        Ми розуміємо, що біль — не лише фізичний...
-                    </p>
-                </div>
+                <?php if ($text) : ?>
+                    <div class="approach__content">
+                        <?= $text; ?>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="approach__column">
                 <div class="approach__expert">
-                    <img src="..." alt="" class="approach__photo">
-
-                    <div class="approach__name">Смірнова Олена Сергіївна</div>
-                    <div class="approach__position">
-                        Клінічний психолог, психоаналітик та сексолог
-                    </div>
+                    <?php if (!empty($photo)) : ?>
+                        <img src="<?= esc_url($photo['url']); ?>" alt="<?= esc_attr($photo['alt']); ?>" class="approach__photo">
+                    <?php endif; ?>
+                    <?php if ($name) : ?>
+                        <div class="approach__name"><?= $name; ?></div>
+                    <?php endif; ?>
+                    <?php if ($position) : ?>
+                        <div class="approach__position">
+                            <?= $position; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

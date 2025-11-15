@@ -48,7 +48,7 @@
                             array(
                                 'theme_location'  => 'header-menu',
                                 'container'       => false,
-                                'menu_class'      => 'menu',
+                                'menu_class'      => 'menu__list',
                             )
                         );
                         ?>

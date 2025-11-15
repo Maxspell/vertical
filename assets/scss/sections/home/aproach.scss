@@ -1,0 +1,7 @@
+.aproach {
+    &__columns {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 8rem;
+    }
+}

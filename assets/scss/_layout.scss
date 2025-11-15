@@ -1,7 +1,15 @@
 .container {
     width: 100%;
-    max-width: $container-width;
+    padding-inline: $container-padding;
     margin: 0 auto;
+}
+
+.container--primary {
+    max-width: $container-primary;
+}
+
+.container--secondary {
+    max-width: $container-secondary;
 }
 
 .wrapper {
@@ -16,10 +24,10 @@
 }
 
 .section {
-    padding-block: 8rem;
+    padding-block: 3rem;
 
     @media (max-width: 768px) {
-        padding-block: 6.4rem;
+        padding-block: 1.5rem;
     }
 }
 
