@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -486,33 +485,23 @@ button {
 
 .hero {
   padding: 4rem 0 6rem;
-  /* --- ЛЕВЫЙ ВЕРХ — текст --- */
-  /* --- ПРАВЫЙ ВЕРХ — большое фото --- */
-  /* --- ЛЕВЫЙ НИЗ — маленькое фото --- */
-  /* --- ЛЕВЫЙ НИЗ — список услуг (темный блок) --- */
-  /* --- АДАПТИВ --- */
 }
 .hero .hero__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 2.4rem;
 }
 .hero .hero__text-block {
+  grid-column: 1/2;
+  grid-row: 1/2;
   background: #EBF1F8;
   border-radius: 1.6rem;
   padding: 3.2rem;
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-.hero .hero__text-block .hero__text {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  color: #6A7FA1;
 }
 .hero .hero__image-main {
   grid-column: 2/3;
-  grid-row: 1/3;
+  grid-row: 1/4;
   border-radius: 1.6rem;
   overflow: hidden;
 }
@@ -521,7 +510,6 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: block;
 }
 .hero .hero__image-small {
   grid-column: 1/2;
@@ -534,45 +522,24 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: block;
 }
 .hero .hero__list-block {
+  grid-column: 1/2;
+  grid-row: 3/4;
   background: #253B66;
   border-radius: 1.6rem;
   padding: 3.2rem;
-  grid-column: 1/2;
-  grid-row: 2/3;
-  align-self: end;
+  color: #fff;
 }
 .hero .hero__list-block .hero__list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 600;
+  gap: 1.8rem;
 }
 .hero .hero__list-block .hero__list li {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-}
-.hero .hero__list-block .hero__list li span {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: #fff;
-  position: relative;
-}
-.hero .hero__list-block .hero__list li span::after {
-  content: "✔";
-  position: absolute;
-  color: #253B66;
-  font-size: 1.2rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 700;
+  gap: 1rem;
 }
 @media (max-width: 991px) {
   .hero .hero__grid {
@@ -580,12 +547,8 @@ button {
     grid-template-rows: auto;
   }
   .hero .hero__image-main {
-    grid-column: 1/2;
     grid-row: auto;
-    height: 44rem;
-  }
-  .hero .hero__image-small {
-    height: 22rem;
+    height: 42rem;
   }
 }
 
@@ -623,6 +586,14 @@ button {
   }
 }
 
+/* Aproach */
+.aproach__columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8rem;
+}
+
+/* About */
 .about {
   padding-block: 1.5rem;
 }
@@ -632,11 +603,172 @@ button {
   gap: 3rem;
 }
 
-.footer {
-  background-color: #E8F0F8;
-  border-radius: 12rem 12rem 0 0;
-  padding-block: 3rem;
+/* Page hero */
+.page-hero__inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding-inline: 1.5rem;
+  padding-block: 12rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+.page-hero__inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2D4469;
+  border-radius: 20px;
+  opacity: 0.7;
+}
+.page-hero__content {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+}
+.page-hero__subtitle {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.24rem;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+}
+.page-hero__title {
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contacts {
+  margin-block: 8rem;
+}
+
+.contacts__inner {
+  background-color: #2D4469;
+  border-radius: 2rem;
+  padding-block: 6rem;
+  padding-inline: 3rem;
+}
+
+.contacts__columns {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 1rem;
+}
+
+.contacts__location {
+  background-color: #D8E6F3;
+  border-radius: 1rem;
+}
+
+.contacts__list {
+  background-color: #D8E6F3;
+  border-radius: 1rem;
+  padding: 3.2rem;
+}
+
+.contacts__item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(17, 83, 161, 0.1019607843);
+  padding-block: 1.2rem;
+}
+.contacts__item:last-child {
+  padding-block-end: 0;
+}
+.contacts__item:first-child {
+  padding-block-start: 0;
+}
+
+.contacts__item:last-child {
+  border-bottom: 0;
+}
+
+/* Team section */
+.team {
+  padding-block: 6rem;
+}
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+.team__item {
+  text-align: center;
+  overflow: hidden;
+}
+.team__img {
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.team__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.team__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.team__position {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+/* Price section */
+.price {
+  padding-block: 6rem;
+}
+
+.price__columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
+.price__item {
+  margin-bottom: 1.6rem;
+}
+
+.price__item-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.price__subitem {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.price__subitem-title,
+.price__subitem-price {
+  white-space: nowrap;
+}
+
+.price__subitem-dots {
+  flex: 1 1 auto;
+  border-bottom: 2px dotted #8BAAD9;
+  margin: 0 1rem;
+}
+
 @media (max-width: 768px) {
   .footer {
     border-radius: 4rem 4rem 0 0;
@@ -644,7 +776,10 @@ button {
   }
 }
 .footer__inner {
+  background-color: #E8F0F8;
+  border-radius: 12rem 12rem 0 0;
   padding-inline: 7rem;
+  padding-block: 3rem;
 }
 @media (max-width: 768px) {
   .footer__inner {

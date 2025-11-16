@@ -11,14 +11,16 @@ $image = $hero_section['image'] ?? [];
 ?>
 
 <section class="page-hero">
-    <div class="page-hero__inner" style="background-image: url();">
-        <div class="page-hero__content">
-            <?php if ($subtitle) : ?>
-                <div class="page-hero__subtitle"><?= esc_html($subtitle); ?></div>
-            <?php endif; ?>
-            <?php if ($title) : ?>
-                <div class="page-hero__title"><?= esc_html($title); ?></div>
-            <?php endif; ?>
+    <div class="container">
+        <div class="page-hero__inner" style="background-image: url(<?= esc_url($image['url']); ?>);">
+            <div class="page-hero__content">
+                <?php if ($subtitle) : ?>
+                    <div class="page-hero__subtitle"><?= esc_html($subtitle); ?></div>
+                <?php endif; ?>
+                <?php if ($title) : ?>
+                    <div class="page-hero__title"><?= esc_html($title); ?></div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

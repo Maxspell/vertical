@@ -10,22 +10,28 @@ $list = $team_section['list'] ?? [];
 
 <?php if (!empty($list)) : ?>
     <section class="team">
-        <div class="container">
-            <div class="team__list">
+        <div class="container container--primary">
+            <ul class="team__list">
                 <?php foreach ($list as $item) :
                     $title = $item['title'] ?? '';
+                    $position = $item['position'] ?? '';
                     $image = $item['image'] ?? [];
                 ?>
-                    <div class="team__item">
+                    <li class="team__item">
                         <?php if (!empty($image)) : ?>
-                            <img class="team__item-img" src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($image['alt']); ?>">
+                            <div class="team__img">
+                                <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($image['alt']); ?>">
+                            </div>
                         <?php endif; ?>
                         <?php if ($title) : ?>
-                            <h3 class="team__item-title"><?= esc_html($title); ?></h3>
+                            <h3 class="team__title"><?= esc_html($title); ?></h3>
                         <?php endif; ?>
-                    </div>
+                        <?php if ($position) : ?>
+                            <div class="team__position"><?= esc_html($position); ?></div>
+                        <?php endif; ?>
+                    </li>
                 <?php endforeach; ?>
-            </div>
+            </ul>
         </div>
     </section>
 <?php endif; ?>

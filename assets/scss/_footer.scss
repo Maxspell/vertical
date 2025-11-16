@@ -1,15 +1,14 @@
 .footer {
-    background-color: #E8F0F8;
-    border-radius: 12rem 12rem 0 0;
-    padding-block: 3rem;
-
     @media (max-width: 768px) {
         border-radius: 4rem 4rem 0 0;
         padding-block: 1.5rem;
     }
 
     &__inner {
+        background-color: #E8F0F8;
+        border-radius: 12rem 12rem 0 0;
         padding-inline: 7rem;
+        padding-block: 3rem;
 
         @media (max-width: 768px) {
             padding-inline: 2rem;
