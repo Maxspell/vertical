@@ -11,24 +11,20 @@ $image_1 = $hero_section['image_1'] ?? [];
 $image_2 = $hero_section['image_2'] ?? [];
 ?>
 
-<section class="hero">
+<section class="hero section">
     <div class="container container--secondary">
 
         <div class="hero__grid">
 
-            <!-- Левый верх - текст -->
             <div class="hero__text-block">
                 <div class="hero__text"><?= $text; ?></div>
             </div>
 
-            <!-- Правый большой блок -->
             <div class="hero__image-main">
                 <?php if (!empty($image_1)) : ?>
                     <img src="<?= esc_url($image_1['url']); ?>" alt="<?= esc_attr($image_1['alt']); ?>">
                 <?php endif; ?>
             </div>
-
-            <!-- Левый нижний сегмент: маленькое фото + список в одной строке -->
 
             <div class="hero__image-small">
                 <?php if (!empty($image_2)) : ?>
@@ -45,7 +41,6 @@ $image_2 = $hero_section['image_2'] ?? [];
                     </ul>
                 </div>
             <?php endif; ?>
-
 
         </div>
 

@@ -15,18 +15,22 @@ $list = $about_section['list'] ?? [];
         <div class="about__columns">
             <div class="about__column">
                 <?php if (!empty($image)) : ?>
-                    <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($logo['alt']); ?>">
+                    <div class="about__image">
+                        <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($image['alt']); ?>">
+                    </div>
                 <?php endif; ?>
                 <?php if (!empty($list)) : ?>
                     <ul class="about__list">
                         <?php foreach ($list as $item) : ?>
-                            <li><?= esc_html($item['title']); ?>
+                            <li class="about__item"><?= esc_html($item['title']); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
             </div>
             <div class="about__column">
-                <?= $text; ?>
+                <div class="about__content">
+                    <?= $text; ?>
+                </div>
             </div>
         </div>
     </div>

@@ -24,7 +24,9 @@ $position = $approach_section['position'] ?? '';
             <div class="approach__column">
                 <div class="approach__expert">
                     <?php if (!empty($photo)) : ?>
-                        <img src="<?= esc_url($photo['url']); ?>" alt="<?= esc_attr($photo['alt']); ?>" class="approach__photo">
+                        <div class="approach__image">
+                            <img src="<?= esc_url($photo['url']); ?>" alt="<?= esc_attr($photo['alt']); ?>">
+                        </div>
                     <?php endif; ?>
                     <?php if ($name) : ?>
                         <div class="approach__name"><?= $name; ?></div>
