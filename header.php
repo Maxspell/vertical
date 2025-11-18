@@ -53,7 +53,7 @@
                         );
                         ?>
                     </nav>
-
+                    <div class="header__phone icon icon-phone"></div>
                     <?php if (!empty($button)) : ?>
                         <a href="<?php echo esc_url($button['url']); ?>" class="header__button button" target="_blank">
                             <span><?php echo esc_html($button['title']); ?></span>
