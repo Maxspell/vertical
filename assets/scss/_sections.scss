@@ -182,6 +182,10 @@
         gap: 8rem;
     }
 
+    &__column--left {
+        align-content: center;
+    }
+
     &__content {
         font-size: 1.8rem;
     }
@@ -443,4 +447,135 @@
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+/* Contact Form */
+.contact-form {
+
+    &__columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.4rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__subtitle {
+        @include subtitle;
+    }
+
+    &__title {
+        font-size: 5.2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+
+        @media (max-width: 768px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+    }
+
+    &__field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        &--half {
+            width: calc(50% - 0.8rem);
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        &--full {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-left: 2.4rem;
+    }
+
+    &__input {
+        width: 100%;
+        color: $color-text;
+        padding: 1.2rem 2.4rem;
+        border-radius: 2.4rem;
+        border: none;
+        background-color: #D8E6F3;
+        font-size: 1.6rem;
+
+        &::placeholder {
+            color: $color-text;
+        }
+    }
+
+    &__button {
+        margin-top: 2.4rem;
+    }
+
+    &__column--right {
+        position: relative;
+        align-content: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-image: url(../img/verticalbg2.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 52rem;
+            height: 49.4rem;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            &::before {
+                left: 50%;
+                right: auto;
+                transform: translate(-50%, -50%);
+                width: 100vw;
+                max-width: 40rem;
+                height: auto;
+                aspect-ratio: 520 / 494;
+            }
+        }
+    }
+
+    &__list {
+        width: 37rem;
+        background-color: #E8F0F8;
+        border-radius: 2.4rem;
+        padding: 3.2rem;
+        margin-left: auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &__item {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.6rem;
+    }
+
 }

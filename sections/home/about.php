@@ -11,7 +11,7 @@ $list = $about_section['list'] ?? [];
 ?>
 
 <section class="about section">
-    <div class="container">
+    <div class="container container--primary">
         <div class="about__columns">
             <div class="about__column">
                 <?php if (!empty($image)) : ?>

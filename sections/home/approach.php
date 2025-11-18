@@ -12,16 +12,16 @@ $position = $approach_section['position'] ?? '';
 ?>
 
 <section class="approach section">
-    <div class="container">
+    <div class="container container--primary">
         <div class="approach__columns">
-            <div class="approach__column">
+            <div class="approach__column approach__column--left">
                 <?php if ($text) : ?>
                     <div class="approach__content">
                         <?= $text; ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="approach__column">
+            <div class="approach__column approach__column--right">
                 <div class="approach__expert">
                     <?php if (!empty($photo)) : ?>
                         <div class="approach__image">
