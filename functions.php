@@ -98,8 +98,11 @@ add_action('after_setup_theme', 'vertical_setup');
 function vertical_scripts()
 {
     wp_enqueue_style('vertical-swiper', get_template_directory_uri() . '/assets/css/swiper.min.css', array(), _S_VERSION);
+    wp_enqueue_style('vertical-fancybox', get_template_directory_uri() . '/assets/css/fancybox.css', array(), _S_VERSION);
     wp_enqueue_style('vertical-style', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION);
+
     wp_enqueue_script('vertical-swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array(), _S_VERSION, true);
+    wp_enqueue_script('vertical-fancybox', get_template_directory_uri() . '/assets/js/fancybox.umd.js', array(), _S_VERSION, true);
     wp_enqueue_script('vertical-main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'vertical_scripts');
