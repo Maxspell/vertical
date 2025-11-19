@@ -455,6 +455,73 @@
     text-transform: uppercase;
 }
 
+/* Reviews */
+.reviews {
+    margin-bottom: 8rem;
+
+    &__inner {
+        background-color: $color-accent;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        padding-block-start: 10rem;
+        padding-block-end: 15rem;
+    }
+
+    &__title {
+        color: $color-white;
+        margin-bottom: 3.2rem;
+    }
+
+    &__columns {
+        display: flex;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__column--left {
+        flex: 1 1 66.666%;
+    }
+
+    &__column--right {
+        position: relative;
+        flex: 1 1 33.333%;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-image: url(../img/verticalbg.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 32.5rem;
+            height: 31rem;
+        }
+    }
+
+    &__slider-wrapper {
+        position: relative;
+        max-width: 80rem;
+    }
+
+    &__slide {
+        background-color: #E8F0F8;
+        border-radius: 1rem;
+        padding: 3.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .swiper-button {
+            display: none;
+        }
+    }
+}
+
 /* Contact Form */
 .contact-form {
 

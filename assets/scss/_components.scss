@@ -46,25 +46,51 @@
     justify-content: center;
     width: 4rem;
     height: 4rem;
-    background-color: #F5F5F566;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 2.4rem 2.4rem;
-    backdrop-filter: blur(8px);
-    border-radius: 0.8rem;
+    font-size: 3.2rem;
     cursor: pointer;
     user-select: none;
     z-index: 10;
+    transition: transform 0.3s ease, color 0.3s ease;
 
     &--prev {
-        left: 2.4rem;
-        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5 18.5L8.5 11.5L15.5 4.5' stroke='%23F5F5F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        left: -6.4rem;
+
+        &:hover {
+            color: $color-white;
+            transform: translateY(-50%) translateX(-5px);
+        }
     }
 
     &--next {
-        right: 2.4rem;
-        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 18.5L15.5 11.5L8.5 4.5' stroke='%23F5F5F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        right: -6.4rem;
+
+        &:hover {
+            color: $color-white;
+            transform: translateY(-50%) translateX(5px);
+        }
     }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+    bottom: -4.8rem;
+}
+
+.swiper-pagination-bullet {
+    background-color: $color-text;
+    opacity: 1;
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+.swiper-pagination-bullet-active {
+    border: 1px solid $color-text;
+    background-color: transparent;
+    width: 1rem;
+    height: 1rem;
 }
 
 /* CONTACT FORM 7 */

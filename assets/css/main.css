@@ -200,6 +200,28 @@ summary {
   display: list-item;
 }
 
+@keyframes wiggle-left {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-3px);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+@keyframes wiggle-right {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(3px);
+  }
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+}
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff2") format("woff2");
@@ -288,6 +310,18 @@ summary {
 
 .icon-arrow-right2:before {
   content: "\ea3c";
+}
+
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
+
+.icon-circle-down:before {
+  content: "\ea43";
+}
+
+.icon-hangouts:before {
+  content: "\ea8e";
 }
 
 html,
@@ -389,7 +423,7 @@ button {
 
 .section-title {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 4rem;
+  font-size: 5.2rem;
   color: #8BAAD9;
   line-height: 1.2;
 }
@@ -445,26 +479,49 @@ button {
   justify-content: center;
   width: 4rem;
   height: 4rem;
-  background-color: rgba(245, 245, 245, 0.4);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 2.4rem 2.4rem;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  border-radius: 0.8rem;
+  font-size: 3.2rem;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   z-index: 10;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 .swiper-button--prev {
-  left: 2.4rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5 18.5L8.5 11.5L15.5 4.5' stroke='%23F5F5F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  left: -6.4rem;
+}
+.swiper-button--prev:hover {
+  color: #ffffff;
+  transform: translateY(-50%) translateX(-5px);
 }
 .swiper-button--next {
-  right: 2.4rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 18.5L15.5 11.5L8.5 4.5' stroke='%23F5F5F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  right: -6.4rem;
+}
+.swiper-button--next:hover {
+  color: #ffffff;
+  transform: translateY(-50%) translateX(5px);
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+  bottom: -4.8rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: #8BAAD9;
+  opacity: 1;
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+.swiper-pagination-bullet-active {
+  border: 1px solid #8BAAD9;
+  background-color: transparent;
+  width: 1rem;
+  height: 1rem;
 }
 
 /* CONTACT FORM 7 */
@@ -941,6 +998,65 @@ button {
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+/* Reviews */
+.reviews {
+  margin-bottom: 8rem;
+}
+.reviews__inner {
+  background-color: #2D4469;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  padding-block-start: 10rem;
+  padding-block-end: 15rem;
+}
+.reviews__title {
+  color: #ffffff;
+  margin-bottom: 3.2rem;
+}
+.reviews__columns {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .reviews__columns {
+    flex-direction: column;
+  }
+}
+.reviews__column--left {
+  flex: 1 1 66.666%;
+}
+.reviews__column--right {
+  position: relative;
+  flex: 1 1 33.333%;
+}
+.reviews__column--right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-image: url(../img/verticalbg.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32.5rem;
+  height: 31rem;
+}
+.reviews__slider-wrapper {
+  position: relative;
+  max-width: 80rem;
+}
+.reviews__slide {
+  background-color: #E8F0F8;
+  border-radius: 1rem;
+  padding: 3.2rem;
+}
+@media (max-width: 768px) {
+  .reviews .swiper-button {
+    display: none;
+  }
 }
 
 /* Contact Form */
