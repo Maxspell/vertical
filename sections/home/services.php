@@ -18,15 +18,10 @@
 
                     <article class="services__item">
                         <a href="<?php the_permalink(); ?>" class="services__link">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div class="services__thumb">
-                                    <?php the_post_thumbnail('medium'); ?>
-                                </div>
-                            <?php endif; ?>
-
                             <h3 class="services__item-title">
                                 <?php the_title(); ?>
                             </h3>
+                            <div class="button button--secondary">Детальніше</div>
                         </a>
                     </article>
 

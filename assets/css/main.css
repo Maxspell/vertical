@@ -394,7 +394,7 @@ button {
 
 .container {
   width: 100%;
-  padding-inline: 1.5rem;
+  padding-inline: 1.6rem;
   margin: 0 auto;
 }
 
@@ -418,7 +418,7 @@ button {
 }
 
 .section {
-  padding-block: 3rem;
+  padding-block: 3.2rem;
 }
 
 .section-title {
@@ -459,14 +459,17 @@ button {
   border-radius: 5rem;
   padding: 1.1rem 2.4rem;
   line-height: 1.5;
-  text-transform: uppercase;
   transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
 }
-
 .button:hover {
   color: #ffffff;
   background: #8BAAD9;
   border: 1px solid #8BAAD9;
+}
+.button--secondary {
+  background-color: #D8E6F3;
+  color: #000000;
+  border: 1px solid #D8E6F3;
 }
 
 /* ==== SWIPER NAVIGATION BUTTONS ==== */
@@ -611,44 +614,44 @@ button {
   opacity: 1;
 }
 
-.hero .hero__grid {
+.hero__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   gap: 2.4rem;
 }
-.hero .hero__text-block {
+.hero__text-block {
   grid-column: 1/2;
   grid-row: 1/2;
   background: #EBF1F8;
   border-radius: 1.6rem;
   padding: 3.2rem;
 }
-.hero .hero__image-main {
+.hero__image-main {
   grid-column: 2/3;
   grid-row: 1/4;
   border-radius: 1.6rem;
   overflow: hidden;
 }
-.hero .hero__image-main img {
+.hero__image-main img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.hero .hero__image-small {
+.hero__image-small {
   grid-column: 1/2;
   grid-row: 2/3;
   border-radius: 1.6rem;
   overflow: hidden;
 }
-.hero .hero__image-small img {
+.hero__image-small img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.hero .hero__list-block {
+.hero__list-block {
   grid-column: 1/2;
   grid-row: 3/4;
   background: #253B66;
@@ -656,15 +659,10 @@ button {
   padding: 3.2rem;
   color: #fff;
 }
-.hero .hero__list-block .hero__list {
+.hero__list {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
-}
-.hero .hero__list-block .hero__list li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 @media (max-width: 991px) {
   .hero .hero__grid {
@@ -732,6 +730,9 @@ button {
 .about__item {
   font-size: 2rem;
   font-weight: 700;
+}
+.about__item:not(:last-child) {
+  margin-bottom: 0.8rem;
 }
 .about__image {
   height: 100%;
@@ -969,37 +970,94 @@ button {
   margin: 0 1rem;
 }
 
+/* Services */
 .services {
   background-color: #E7F0F8;
 }
-.services__title {
-  margin-bottom: 3.2rem;
-}
-
 .services__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
-
-.services__item {
-  background-color: #2D4469;
-  border-radius: 1rem;
+@media (max-width: 1100px) {
+  .services__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
 }
-
+@media (max-width: 768px) {
+  .services__list {
+    grid-template-columns: 1fr;
+  }
+}
+.services__title {
+  margin-bottom: 3.2rem;
+}
 .services__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 4rem;
   min-height: 30rem;
 }
-
+@media (max-width: 768px) {
+  .services__link {
+    min-height: 20rem;
+  }
+}
+.services__item {
+  position: relative;
+  background-color: #2D4469;
+  border-radius: 1rem;
+}
+.services__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/verticalbg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .services__item::before {
+    width: 15rem;
+    left: auto;
+    right: 4rem;
+  }
+}
 .services__item-title {
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+@media (max-width: 992px) {
+  .services__item-title {
+    font-size: 1.6rem;
+  }
 }
 
+/* Gallery */
+.gallery {
+  padding-block-start: 3.2rem;
+}
+.gallery__inner {
+  background-color: #8BAAD9;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  padding-block: 9.6rem;
+}
+.gallery__title {
+  color: #ffffff;
+  margin-bottom: 3.2rem;
+}
 /* Reviews */
 .reviews {
   margin-bottom: 8rem;

@@ -22,7 +22,10 @@ $list = $about_section['list'] ?? [];
                 <?php if (!empty($list)) : ?>
                     <ul class="about__list">
                         <?php foreach ($list as $item) : ?>
-                            <li class="about__item"><?= esc_html($item['title']); ?></li>
+                            <li class="about__item">
+                                <i class="icon icon-checkmark"></i>
+                                <?= esc_html($item['title']); ?>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>

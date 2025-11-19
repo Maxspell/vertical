@@ -26,15 +26,21 @@
     border-radius: 5rem;
     padding: 1.1rem 2.4rem;
     line-height: 1.5;
-    text-transform: uppercase;
     transition: background-color 0.3s linear, color 0.3s linear, border 0.3s linear;
+
+    &:hover {
+        color: $color-white;
+        background: $color-text;
+        border: 1px solid $color-text;
+    }
+
+    &--secondary {
+        background-color: #D8E6F3;
+        color: #000000;
+        border: 1px solid #D8E6F3;
+    }
 }
 
-.button:hover {
-    color: $color-white;
-    background: $color-text;
-    border: 1px solid $color-text;
-}
 
 /* ==== SWIPER NAVIGATION BUTTONS ==== */
 .swiper-button {

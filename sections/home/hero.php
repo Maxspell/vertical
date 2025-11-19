@@ -36,7 +36,10 @@ $image_2 = $hero_section['image_2'] ?? [];
                 <div class="hero__list-block">
                     <ul class="hero__list">
                         <?php foreach ($list as $item) : ?>
-                            <li><span></span><?= $item['title']; ?></li>
+                            <li>
+                                <i class="icon icon-checkmark"></i>
+                                <?= $item['title']; ?>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
