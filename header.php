@@ -53,13 +53,18 @@
                         );
                         ?>
                     </nav>
-                    <div class="header__phone icon icon-phone"></div>
+                    <div class="header__actions">
+                        <a href="#" class="header__phone">
+                            <i class="icon icon-phone" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="header__button button">
+                            <span>Запис на консультацію</span>
+                            <i class="icon icon-arrow-right2" aria-hidden="true"></i>
+                        </a>
+                    </div>
                     <?php if (!empty($button)) : ?>
                         <a href="<?php echo esc_url($button['url']); ?>" class="header__button button" target="_blank">
                             <span><?php echo esc_html($button['title']); ?></span>
-                            <svg class="arrow-btn" aria-hidden="true">
-                                <use href="/wp-content/themes/vertical/assets/icons/icons.svg#arrow-btn"></use>
-                            </svg>
                         </a>
                     <?php endif; ?>
 

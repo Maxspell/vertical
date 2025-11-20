@@ -35,7 +35,8 @@ $contact_form = $contact_form_section['contact_form'] ?? '';
                                 $title = $item['title'] ?? '';
                             ?>
                                 <li class="contact-form__item">
-                                    <?= $title; ?>
+                                    <i class="icon icon-checkmark"></i>
+                                    <span><?= $title; ?></span>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
