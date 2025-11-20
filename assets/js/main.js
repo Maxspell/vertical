@@ -23,6 +23,10 @@ const initSwiper = () => {
     }
 };
 
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     initSwiper();
 });
