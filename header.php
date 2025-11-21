@@ -31,7 +31,7 @@
         ?>
 
         <header class="header">
-            <div class="container">
+            <div class="container container--tertiary">
                 <div class="header__inner">
 
                     <div class="header__logo">
@@ -49,6 +49,7 @@
                                 'theme_location'  => 'header-menu',
                                 'container'       => false,
                                 'menu_class'      => 'menu__list',
+                                'walker'          => new Mega_Menu_Walker(),
                             )
                         );
                         ?>

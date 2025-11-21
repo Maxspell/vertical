@@ -12,6 +12,10 @@
     max-width: $container-secondary;
 }
 
+.container--tertiary {
+    max-width: $container-tertiary;
+}
+
 .wrapper {
     position: relative;
     min-height: 100%;
