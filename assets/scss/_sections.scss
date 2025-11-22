@@ -757,3 +757,125 @@
         }
     }
 }
+
+/* Advantages */
+.advantages {
+    .advantages__title {}
+
+    .advantages__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.6rem
+    }
+
+    .advantages__item {
+        background-color: $color-text;
+        border-radius: 1.6rem;
+        color: $color-white;
+        padding: 3.2rem;
+    }
+
+    .advantages__text {
+        text-align: center;
+    }
+}
+
+/* Steps */
+.steps {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.4rem;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+        }
+    }
+
+    &__item {
+        background: #E8F0F8;
+        border-radius: 1.6rem;
+        padding: 2.4rem 3.2rem 2.4rem 2.4rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            transform: translateY(-0.4rem);
+            box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+        }
+
+        counter-increment: step-counter;
+
+        &::before {
+            content: counter(step-counter);
+            position: absolute;
+            top: 1.6rem;
+            right: 1.6rem;
+            font-size: 4.8rem;
+            font-weight: 700;
+            line-height: 1;
+            color: rgba($color-accent, 0.1);
+            pointer-events: none;
+        }
+    }
+
+    &__text {
+        font-size: $font-size-base;
+        font-family: $font-primary;
+        color: $color-accent;
+        position: relative;
+        z-index: 2;
+        line-height: 1.5;
+    }
+}
+
+/* Why Us */
+.why_us {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: $color-accent;
+        padding: 2rem 2.4rem;
+        background: $color-white;
+        border: 1px solid rgba($color-accent, 0.15);
+        border-radius: 1.2rem;
+        position: relative;
+        transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+
+        &:hover {
+            background: $color-bg;
+            border-color: rgba($color-accent, 0.3);
+            transform: translateY(-0.3rem);
+        }
+    }
+
+    &__text {
+        font-size: $font-size-base;
+        font-family: $font-primary;
+        color: $color-accent;
+        line-height: 1.45;
+        font-weight: 500;
+    }
+}

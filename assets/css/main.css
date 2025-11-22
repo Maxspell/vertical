@@ -438,6 +438,11 @@ button {
   }
 }
 
+.section-title--service {
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
+}
+
 /* MENU */
 .menu__list {
   display: flex;
@@ -1511,6 +1516,111 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* Advantages */
+.advantages .advantages__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.6rem;
+}
+.advantages .advantages__item {
+  background-color: #8BAAD9;
+  border-radius: 1.6rem;
+  color: #ffffff;
+  padding: 3.2rem;
+}
+.advantages .advantages__text {
+  text-align: center;
+}
+
+/* Steps */
+.steps__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+}
+@media (max-width: 992px) {
+  .steps__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .steps__list {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+.steps__item {
+  background: #E8F0F8;
+  border-radius: 1.6rem;
+  padding: 2.4rem 3.2rem 2.4rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  counter-increment: step-counter;
+}
+.steps__item:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+}
+.steps__item::before {
+  content: counter(step-counter);
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(45, 68, 105, 0.1);
+  pointer-events: none;
+}
+.steps__text {
+  font-size: 1.6rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #2D4469;
+  position: relative;
+  z-index: 2;
+  line-height: 1.5;
+}
+
+/* Why Us */
+.why_us__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media (max-width: 768px) {
+  .why_us__list {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+.why_us__item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #2D4469;
+  padding: 2rem 2.4rem;
+  background: #ffffff;
+  border: 1px solid rgba(45, 68, 105, 0.15);
+  border-radius: 1.2rem;
+  position: relative;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.why_us__item:hover {
+  background: #F5FAFE;
+  border-color: rgba(45, 68, 105, 0.3);
+  transform: translateY(-0.3rem);
+}
+.why_us__text {
+  font-size: 1.6rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #2D4469;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
