@@ -22,19 +22,19 @@ $map = $contacts_section['map'] ?? '';
                         <address class="location">
                             <?php if ($address) : ?>
                                 <div class="location__address">
-                                    <div class="location__label">Адреса</div>
+                                    <div class="location__label icon icon-location2"><span>Адреса</span></div>
                                     <div class="location__title"><?= $address; ?></div>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($email)) : ?>
-                                <div class="contacts__email">
-                                    <div class="location__label">Email</div>
+                                <div class="location__email">
+                                    <div class="location__label icon icon-envelop"><span>Email</span></div>
                                     <div class="location__title"><a href="<?= $email['url']; ?>"><?= $email['title']; ?></a></div>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($phone)) : ?>
-                                <div class="contacts__phone">
-                                    <div class="location__label">Телефон</div>
+                                <div class="location__phone">
+                                    <div class="location__label icon icon-phone"><span>Телефон</span></div>
                                     <div class="location__title"><a href="<?= $phone['url']; ?>"><?= $phone['title']; ?></a></div>
                                 </div>
                             <?php endif; ?>

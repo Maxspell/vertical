@@ -374,17 +374,26 @@
 /* Price section */
 .price {
     padding-block: 6rem;
+
+    &__columns {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+
+    &__column--left {
+        background-image: url(../img/verticalbg2.png);
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
-.price__columns {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-}
+
 
 .price__column {}
 
-.price__column--left {}
+
 
 .price__column--right {}
 
@@ -769,14 +778,78 @@
     }
 
     .advantages__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: $color-text;
         border-radius: 1.6rem;
         color: $color-white;
         padding: 3.2rem;
+        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            transform: translateY(-0.4rem);
+            box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+        }
     }
 
     .advantages__text {
         text-align: center;
+    }
+}
+
+/* Indicators */
+.indications {
+    background: linear-gradient(135deg, rgba($color-accent, 0.05) 0%, rgba($color-bg, 1) 100%);
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.8rem;
+        margin-top: 4rem;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+    }
+
+    &__item {
+        background: $color-white;
+        border-radius: 2rem;
+        padding: 3rem 2.4rem;
+        text-align: center;
+        box-shadow: 0 0.6rem 1.8rem rgba($color-accent, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-0.5rem) scale(1.02);
+            box-shadow: 0 1.2rem 2.4rem rgba($color-accent, 0.15);
+        }
+
+        /* Акцентная полоска сверху карточки */
+        &::before {
+            content: '';
+            display: block;
+            width: 5rem;
+            height: 0.4rem;
+            background: $color-accent;
+            border-radius: 0.2rem;
+            margin: 0 auto 2rem;
+        }
+    }
+
+    &__text {
+        font-family: $font-primary;
+        font-size: 1.7rem;
+        color: $color-accent;
+        font-weight: 500;
+        line-height: 1.5;
     }
 }
 

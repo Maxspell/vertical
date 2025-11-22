@@ -115,6 +115,28 @@
     }
 }
 
+@media (min-width: 992px) {
+    .menu-item:not(.menu__item--services) .menu__link {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0.1rem;
+            background-color: $color-text;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
 /* MEGA MENU */
 .mega-menu {
     position: absolute;
@@ -298,4 +320,25 @@
 .wpcf7-not-valid-tip {
     font-size: 1.2rem;
     margin-left: 2.4rem;
+}
+
+/* Location */
+.location {
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+
+        span {
+            font-family: $font-primary !important;
+        }
+    }
+
+    &__address,
+    &__email {
+        margin-bottom: 1.6rem;
+    }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -543,6 +544,25 @@ button {
   }
 }
 
+@media (min-width: 992px) {
+  .menu-item:not(.menu__item--services) .menu__link {
+    position: relative;
+  }
+  .menu-item:not(.menu__item--services) .menu__link::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0.1rem;
+    background-color: #8BAAD9;
+    transition: width 0.3s ease;
+  }
+  .menu-item:not(.menu__item--services) .menu__link:hover::after {
+    width: 100%;
+  }
+}
 /* MEGA MENU */
 .mega-menu {
   position: absolute;
@@ -711,6 +731,21 @@ button {
 .wpcf7-not-valid-tip {
   font-size: 1.2rem;
   margin-left: 2.4rem;
+}
+
+/* Location */
+.location__label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+.location__label span {
+  font-family: "Inter", Arial, Helvetica, sans-serif !important;
+}
+.location__address, .location__email {
+  margin-bottom: 1.6rem;
 }
 
 .header {
@@ -1168,11 +1203,16 @@ button {
 .price {
   padding-block: 6rem;
 }
-
 .price__columns {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
+}
+.price__column--left {
+  background-image: url(../img/verticalbg2.png);
+  background-position: center top;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .price__item {
@@ -1525,13 +1565,73 @@ button {
   gap: 1.6rem;
 }
 .advantages .advantages__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #8BAAD9;
   border-radius: 1.6rem;
   color: #ffffff;
   padding: 3.2rem;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.advantages .advantages__item:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
 }
 .advantages .advantages__text {
   text-align: center;
+}
+
+/* Indicators */
+.indications {
+  background: linear-gradient(135deg, rgba(45, 68, 105, 0.05) 0%, #f5fafe 100%);
+}
+.indications__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem;
+  margin-top: 4rem;
+}
+@media (max-width: 992px) {
+  .indications__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .indications__list {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+.indications__item {
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 3rem 2.4rem;
+  text-align: center;
+  box-shadow: 0 0.6rem 1.8rem rgba(45, 68, 105, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Акцентная полоска сверху карточки */
+}
+.indications__item:hover {
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 1.2rem 2.4rem rgba(45, 68, 105, 0.15);
+}
+.indications__item::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.4rem;
+  background: #2D4469;
+  border-radius: 0.2rem;
+  margin: 0 auto 2rem;
+}
+.indications__text {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+  color: #2D4469;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* Steps */
