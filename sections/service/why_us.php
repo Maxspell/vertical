@@ -1,25 +1,44 @@
 <?php
 $why_us_section = get_field('why_us');
 
-if (empty($why_us_section) || $why_us_section['disabled']) {
+if (empty($why_us_section) || !empty($why_us_section['disabled'])) {
     return;
 }
 
 $title = $why_us_section['title'] ?? '';
-$list = $why_us_section['list'] ?? [];
+$list  = $why_us_section['list'] ?? [];
+$image = $why_us_section['image'] ?? [];
 ?>
 
-<section class="why_us section">
+<section class="why-us section">
     <div class="container container--primary">
-        <h2 class="why_us__title section-title section-title--service"><?= $title; ?></h2>
-        <?php if (!empty($list)) : ?>
-            <div class="why_us__list">
-                <?php foreach ($list as $item) : ?>
-                    <div class="why_us__item icon icon-checkmark">
-                        <div class="why_us__text"><?= $item['title']; ?></div>
+        <h2 class="why-us__title section-title section-title--service">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 4.86592C3 4.44124 3.26824 4.06287 3.66898 3.9223L11.669 1.11595C11.8833 1.04078 12.1167 1.04078 12.331 1.11595L20.331 3.92229C20.7318 4.06287 21 4.44124 21 4.86592V10.6602C21 16.2207 17.4878 21.1747 12.2408 23.0154C12.0849 23.07 11.9151 23.07 11.7592 23.0154C6.51216 21.1747 3 16.2207 3 10.6602V4.86592Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M13.3333 8.99983C13.3333 8.44754 12.8856 7.99983 12.3333 7.99983H11.6667C11.1144 7.99983 10.6667 8.44754 10.6667 8.99983V10.5665C10.6667 10.6217 10.6219 10.6665 10.5667 10.6665H9C8.44772 10.6665 8 11.1142 8 11.6665V12.3332C8 12.8854 8.44772 13.3332 9 13.3332H10.5667C10.6219 13.3332 10.6667 13.3779 10.6667 13.4332V14.9998C10.6667 15.5521 11.1144 15.9998 11.6667 15.9998H12.3333C12.8856 15.9998 13.3333 15.5521 13.3333 14.9998V13.4332C13.3333 13.3779 13.3781 13.3332 13.4333 13.3332H15C15.5523 13.3332 16 12.8854 16 12.3332V11.6665C16 11.1142 15.5523 10.6665 15 10.6665L13.4333 10.6665C13.3781 10.6665 13.3333 10.6217 13.3333 10.5665V8.99983Z" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <?= esc_html($title); ?>
+        </h2>
+        <div class="why-us__inner <?= !empty($image) ? 'why-us__inner--with-image' : ''; ?>">
+            <div class="why-us__content">
+                <?php if (!empty($list)) : ?>
+                    <div class="why-us__list <?= !empty($image) ? 'why-us__list--single' : ''; ?>">
+                        <?php foreach ($list as $item) : ?>
+                            <div class="why-us__item icon icon-checkmark">
+                                <div class="why-us__text"><?= esc_html($item['title']); ?></div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
+            <?php if (!empty($image)) : ?>
+                <div class="why-us__image">
+                    <img
+                        src="<?= esc_url($image['url']); ?>"
+                        alt="<?= esc_attr($image['alt'] ?? $title); ?>"
+                        loading="lazy">
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </section>

@@ -13,3 +13,4 @@
 <?php get_template_part('sections/service/indications'); ?>
 <?php get_template_part('sections/service/steps'); ?>
 <?php get_template_part('sections/service/why_us'); ?>
+<?php get_template_part('sections/service/images'); ?>
