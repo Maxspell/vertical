@@ -322,6 +322,11 @@
     margin-left: 2.4rem;
 }
 
+/* Google Map */
+iframe .gm-style .place-card {
+    display: none !important;
+}
+
 /* Location */
 .location {
 
