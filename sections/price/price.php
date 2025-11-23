@@ -1,10 +1,17 @@
 <?php
+$general = get_field('general', 'options');
+$contacts = get_field('contacts', 'options');
 $price_section = get_field('price');
 
 if (empty($price_section) || $price_section['disabled']) {
     return;
 }
 
+$button = $general['button'] ?? [];
+$address = $contacts['address'] ?? '';
+$email = $contacts['email'] ?? [];
+$phone = $contacts['phone'] ?? [];
+$image = $price_section['image'] ?? [];
 $list = $price_section['list'] ?? [];
 ?>
 
@@ -13,7 +20,39 @@ $list = $price_section['list'] ?? [];
         <div class="price__columns">
 
             <div class="price__column price__column--left">
-                <!-- Здесь можешь вывести текст / картинку при необходимости -->
+                <div class="price__contacts">
+                    <?php if (!empty($image)) : ?>
+                        <div class="price__image">
+                            <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($image['alt']); ?>">
+                        </div>
+                    <?php endif; ?>
+                    <address class="location">
+                        <?php if ($address) : ?>
+                            <div class="location__address">
+                                <div class="location__label icon icon-location2"><span>Адреса</span></div>
+                                <div class="location__title"><?= $address; ?></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($email)) : ?>
+                            <div class="location__email">
+                                <div class="location__label icon icon-envelop"><span>Email</span></div>
+                                <div class="location__title"><a href="<?= $email['url']; ?>"><?= $email['title']; ?></a></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($phone)) : ?>
+                            <div class="location__phone">
+                                <div class="location__label icon icon-phone"><span>Телефон</span></div>
+                                <div class="location__title"><a href="<?= $phone['url']; ?>"><?= $phone['title']; ?></a></div>
+                            </div>
+                        <?php endif; ?>
+                    </address>
+                    <?php if (!empty($button)) : ?>
+                        <a href="<?php echo esc_url($button['url']); ?>" class="price__button button">
+                            <span><?php echo esc_html($button['title']); ?></span>
+                            <i class="icon icon-arrow-right2" aria-hidden="true"></i>
+                        </a>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <div class="price__column price__column--right">

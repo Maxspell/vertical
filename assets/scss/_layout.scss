@@ -26,6 +26,10 @@
 .main {
     flex: 1;
     padding-block-start: 11rem;
+
+    @media (max-width: 768px) {
+        padding-block-start: 7rem;
+    }
 }
 
 .section {
@@ -49,6 +53,14 @@
     gap: 0.8rem;
     font-size: 3.2rem;
     margin-bottom: 2.4rem;
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2.4rem;
+    }
 }
 
 .content-section {

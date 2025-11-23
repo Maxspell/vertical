@@ -33,7 +33,6 @@
         <header class="header">
             <div class="container container--tertiary">
                 <div class="header__inner">
-
                     <div class="header__logo">
                         <?php if (!empty($logo)) : ?>
                             <a href="/" class="logo">
@@ -41,7 +40,6 @@
                             </a>
                         <?php endif; ?>
                     </div>
-
                     <nav class="header__nav">
                         <?php
                         wp_nav_menu(
@@ -58,17 +56,13 @@
                         <a href="#" class="header__phone">
                             <i class="icon icon-phone" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="header__button button">
-                            <span>Запис на консультацію</span>
-                            <i class="icon icon-arrow-right2" aria-hidden="true"></i>
-                        </a>
+                        <?php if (!empty($button)) : ?>
+                            <a href="<?php echo esc_url($button['url']); ?>" class="header__button button">
+                                <span><?php echo esc_html($button['title']); ?></span>
+                                <i class="icon icon-arrow-right2" aria-hidden="true"></i>
+                            </a>
+                        <?php endif; ?>
                     </div>
-                    <?php if (!empty($button)) : ?>
-                        <a href="<?php echo esc_url($button['url']); ?>" class="header__button button" target="_blank">
-                            <span><?php echo esc_html($button['title']); ?></span>
-                        </a>
-                    <?php endif; ?>
-
                     <div class="burger-menu">
                         <span></span>
                         <span></span>
