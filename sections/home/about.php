@@ -10,7 +10,7 @@ $image = $about_section['image'] ?? [];
 $list = $about_section['list'] ?? [];
 ?>
 
-<section class="about section">
+<section class="about section section-animate">
     <div class="container container--primary">
         <div class="about__columns">
             <div class="about__column">

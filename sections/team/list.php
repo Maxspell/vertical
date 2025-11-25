@@ -9,7 +9,7 @@ $args = array(
 $team_query = new WP_Query($args);
 ?>
 
-<section class="team section">
+<section class="team section section-animate">
     <div class="container container--primary">
 
         <div class="team__list">

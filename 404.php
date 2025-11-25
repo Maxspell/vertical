@@ -11,51 +11,30 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main class="main">
 
-    <section class="error-404 not-found">
-        <header class="page-header">
-            <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'vertical'); ?></h1>
-        </header><!-- .page-header -->
+    <section class="main-404">
+        <div class="container container--primary">
+            <div class="main-404__content">
+                <div class="main-404__title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="264" height="95" viewBox="0 0 264 95" fill="none">
+                        <path d="M82.8189 72.7014H66.7187V93.6806H50.3587V72.7014H0.5V60.8264L45.295 1.31944H63.3428L21.1446 58.1875H50.8781V39.5833H66.7187V58.1875H82.8189V72.7014Z" fill="#8BAAD9"></path>
+                        <path d="M130.433 95C123.162 95 116.67 93.1528 110.957 89.4583C105.244 85.6759 100.743 80.2222 97.4533 73.0972C94.164 65.8843 92.5194 57.3519 92.5194 47.5C92.5194 37.6482 94.164 29.1597 97.4533 22.0347C100.743 14.8218 105.244 9.36806 110.957 5.67361C116.67 1.8912 123.162 0 130.433 0C137.704 0 144.196 1.8912 149.909 5.67361C155.708 9.36806 160.253 14.8218 163.542 22.0347C166.831 29.1597 168.476 37.6482 168.476 47.5C168.476 57.3519 166.831 65.8843 163.542 73.0972C160.253 80.2222 155.708 85.6759 149.909 89.4583C144.196 93.1528 137.704 95 130.433 95ZM130.433 80.0903C136.925 80.0903 142.032 77.3634 145.754 71.9097C149.563 66.456 151.467 58.3194 151.467 47.5C151.467 36.6806 149.563 28.544 145.754 23.0903C142.032 17.6366 136.925 14.9097 130.433 14.9097C124.027 14.9097 118.92 17.6366 115.112 23.0903C111.39 28.544 109.528 36.6806 109.528 47.5C109.528 58.3194 111.39 66.456 115.112 71.9097C118.92 77.3634 124.027 80.0903 130.433 80.0903Z" fill="#8BAAD9"></path>
+                        <path d="M263.5 72.7014H247.4V93.6806H231.04V72.7014H181.181V60.8264L225.976 1.31944H244.024L201.826 58.1875H231.559V39.5833H247.4V58.1875H263.5V72.7014Z" fill="#8BAAD9"></path>
+                    </svg>
+                </div>
+                <div class="main-404__text h3">Ой! Сторінку не знайдено</div>
+                <div class="main-404__button">
+                    <a href="/" class="button">
+                        <span class="name">На головну</span>
+                        <i class="icon icon-arrow-right2" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="page-content">
-            <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'vertical'); ?></p>
-
-            <?php
-            get_search_form();
-
-            the_widget('WP_Widget_Recent_Posts');
-            ?>
-
-            <div class="widget widget_categories">
-                <h2 class="widget-title"><?php esc_html_e('Most Used Categories', 'vertical'); ?></h2>
-                <ul>
-                    <?php
-                    wp_list_categories(
-                        array(
-                            'orderby'    => 'count',
-                            'order'      => 'DESC',
-                            'show_count' => 1,
-                            'title_li'   => '',
-                            'number'     => 10,
-                        )
-                    );
-                    ?>
-                </ul>
-            </div><!-- .widget -->
-
-            <?php
-            /* translators: %1$s: smiley */
-            $vertical_archive_content = '<p>' . sprintf(esc_html__('Try looking in the monthly archives. %1$s', 'vertical'), convert_smilies(':)')) . '</p>';
-            the_widget('WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$vertical_archive_content");
-
-            the_widget('WP_Widget_Tag_Cloud');
-            ?>
-
-        </div><!-- .page-content -->
-    </section><!-- .error-404 -->
-
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

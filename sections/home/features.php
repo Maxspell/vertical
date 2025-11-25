@@ -9,7 +9,7 @@ $list = $features_section['list'] ?? [];
 ?>
 
 <?php if (!empty($list)) : ?>
-    <section class="features">
+    <section class="features section-animate">
         <div class="container container--primary">
             <div class="features__list">
                 <?php foreach ($list as $item) :

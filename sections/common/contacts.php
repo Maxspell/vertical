@@ -12,7 +12,7 @@ $list = $contacts_section['list'] ?? [];
 $map = $contacts_section['map'] ?? '';
 ?>
 
-<section class="contacts">
+<section class="contacts section-animate">
     <div class="container container--primary">
         <div class="contacts__inner">
             <div class="contacts__columns">

@@ -9,7 +9,7 @@ $title = $gallery_section['title'] ?? '';
 $list = $gallery_section['list'] ?? [];
 ?>
 
-<section class="gallery">
+<section class="gallery section-animate">
     <div class="container">
         <div class="gallery__inner">
             <div class="container container--primary">

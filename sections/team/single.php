@@ -1,4 +1,4 @@
-<section class="content-section section">
+<section class="content-section section section-animate">
     <div class="container container--primary">
         <article class="team-single">
             <div class="team-single__grid">

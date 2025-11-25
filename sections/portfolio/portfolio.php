@@ -8,7 +8,7 @@ if (empty($portfolio_section) || $portfolio_section['disabled']) {
 $list = $portfolio_section['list'] ?? [];
 ?>
 
-<section class="portfolio section">
+<section class="portfolio section section-animate">
     <div class="container container--primary">
         <div class="portfolio__inner">
             <?php if (!empty($list)) : ?>

@@ -11,7 +11,7 @@ $list = $contact_form_section['list'] ?? [];
 $contact_form = $contact_form_section['contact_form'] ?? '';
 ?>
 
-<section class="contact-form section">
+<section class="contact-form section section-animate">
     <div class="container container--primary">
         <div class="contact-form__columns">
             <div class="contact-form__column contact-form__column--left">

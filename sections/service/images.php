@@ -8,7 +8,7 @@ if (empty($images) || !empty($images['disabled'])) {
 $list = $images['list'] ?? [];
 ?>
 
-<section class="images section">
+<section class="images section section-animate">
     <div class="container container--primary">
         <?php if (!empty($list)) : ?>
             <div class="images__list">

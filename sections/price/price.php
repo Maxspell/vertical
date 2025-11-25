@@ -15,7 +15,7 @@ $image = $price_section['image'] ?? [];
 $list = $price_section['list'] ?? [];
 ?>
 
-<section class="price">
+<section class="price section-animate">
     <div class="container container--primary">
         <div class="price__columns">
 

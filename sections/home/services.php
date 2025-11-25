@@ -1,4 +1,4 @@
-<section class="services section">
+<section class="services section section-animate">
     <div class="container container--primary">
         <h2 class="services__title section-title">Методи лікування</h2>
         <div class="services__list">

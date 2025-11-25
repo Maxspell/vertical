@@ -11,7 +11,7 @@ $name = $approach_section['name'] ?? '';
 $position = $approach_section['position'] ?? '';
 ?>
 
-<section class="approach section">
+<section class="approach section section-animate">
     <div class="container container--primary">
         <div class="approach__columns">
             <div class="approach__column approach__column--left">

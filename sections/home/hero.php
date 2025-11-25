@@ -11,27 +11,22 @@ $image_1 = $hero_section['image_1'] ?? [];
 $image_2 = $hero_section['image_2'] ?? [];
 ?>
 
-<section class="hero section">
+<section class="hero section section-animate">
     <div class="container container--secondary">
-
         <div class="hero__grid">
-
             <div class="hero__text-block">
                 <div class="hero__text"><?= $text; ?></div>
             </div>
-
             <div class="hero__image-main">
                 <?php if (!empty($image_1)) : ?>
                     <img src="<?= esc_url($image_1['url']); ?>" alt="<?= esc_attr($image_1['alt']); ?>">
                 <?php endif; ?>
             </div>
-
             <div class="hero__image-small">
                 <?php if (!empty($image_2)) : ?>
                     <img src="<?= esc_url($image_2['url']); ?>" alt="<?= esc_attr($image_2['alt']); ?>">
                 <?php endif; ?>
             </div>
-
             <?php if (!empty($list)) : ?>
                 <div class="hero__list-block">
                     <ul class="hero__list">
@@ -44,8 +39,6 @@ $image_2 = $hero_section['image_2'] ?? [];
                     </ul>
                 </div>
             <?php endif; ?>
-
         </div>
-
     </div>
 </section>

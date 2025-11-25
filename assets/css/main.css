@@ -222,6 +222,17 @@ summary {
     transform: translateY(-50%) translateX(0);
   }
 }
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff2") format("woff2");
@@ -1329,6 +1340,9 @@ iframe .gm-style .place-card {
 }
 
 /* Team single section */
+.team-single {
+  margin-bottom: 3.2rem;
+}
 .team-single__grid {
   display: grid;
   grid-template-columns: 30rem 1fr;
@@ -1986,6 +2000,37 @@ iframe .gm-style .place-card {
   height: auto;
   display: block;
   border-radius: 1.6rem;
+}
+
+/* 404 */
+.main-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.6rem;
+  text-align: center;
+}
+.main-404__content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  min-height: 40rem;
+  justify-content: center;
+}
+.main-404__title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.main-404__text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.main-404__button {
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
